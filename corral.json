@@ -1,0 +1,12 @@
+{
+  "packages": [ "glib", "gobject" ],
+  "deps": [],
+  "info": {
+    "description": "",
+    "homepage": "",
+    "license": "",
+    "documentation_url": "",
+    "version": "",
+    "name": ""
+  }
+}
