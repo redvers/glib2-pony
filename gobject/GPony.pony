@@ -5,7 +5,7 @@ use @g_object_new[GPonyS](gtype: U64, first: Pointer[U8] tag, ...)
 use @g_type_from_name[U64](name: Pointer[U8] tag)
 use @g_type_register_static[U64](parenttype: U64, typename: Pointer[U8] tag, info: NullablePointer[GTypeInfoS] tag, flags: I32)
 
-class GPony[A: Any] is GObjectInterface
+class GPony is GObjectInterface
   var ptr: GPonyS
   var gtype: U64
 
@@ -33,7 +33,6 @@ class GPony[A: Any] is GObjectInterface
 
   fun ref get_ptr(): NullablePointer[GObjectS] tag =>
     NullablePointer[GObjectS](ptr.parent_instance)
-
 
   fun ref get_type(): U64 => gtype
 

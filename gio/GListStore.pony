@@ -13,7 +13,7 @@ class GListStore is (GObjectInterface & GListModelInterface)
     ptr = @g_list_store_new(itemtype)
     ref_sink()
 
-  fun ref g_list_store_append(item: NullablePointer[GObjectS] tag) =>
+  fun ref append(item: NullablePointer[GObjectS] tag) =>
     @g_list_store_append(ptr, item)
 
   fun _final() =>
