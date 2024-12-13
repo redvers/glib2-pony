@@ -1,10 +1,10 @@
-use @g_variant_new[Pointer[_GVariant]](fmt: Pointer[U8] tag, ...)
-use @g_variant_get[None](me: Pointer[_GVariant] tag, fmt: Pointer[U8] tag, ...)
+use @g_variant_new[Pointer[GVariantS]](fmt: Pointer[U8] tag, ...)
+use @g_variant_get[None](me: Pointer[GVariantS] tag, fmt: Pointer[U8] tag, ...)
 
 class GVariant
-  var ptr: Pointer[_GVariant] tag
+  var ptr: Pointer[GVariantS] tag
 
-  fun get_ptr(): Pointer[_GVariant] tag => ptr
+  fun get_ptr(): Pointer[GVariantS] tag => ptr
 
   new create[A: Any](string: String, data: A) =>
     ptr = @g_variant_new(string.cstring(), data)

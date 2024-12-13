@@ -1,13 +1,13 @@
 use "lib:glib-2.0"
 use @printf[I32](fmt: Pointer[U8] tag, ...)
-use @g_bytes_new_static[Pointer[_GBytes] tag](data: Pointer[U8] tag, size: USize)
-use @g_bytes_get_size[USize](data: Pointer[_GBytes] tag)
-use @g_bytes_get_data[Pointer[U8]](data: Pointer[_GBytes] tag, size: USize)
-use @g_bytes_ref[None](data: Pointer[_GBytes] tag)
-use @g_bytes_unref[None](data: Pointer[_GBytes] tag)
+use @g_bytes_new_static[Pointer[GBytesS] tag](data: Pointer[U8] tag, size: USize)
+use @g_bytes_get_size[USize](data: Pointer[GBytesS] tag)
+use @g_bytes_get_data[Pointer[U8]](data: Pointer[GBytesS] tag, size: USize)
+use @g_bytes_ref[None](data: Pointer[GBytesS] tag)
+use @g_bytes_unref[None](data: Pointer[GBytesS] tag)
 
 class GBytes
-  var ptr: Pointer[_GBytes] tag
+  var ptr: Pointer[GBytesS] tag
 
   new create(data: ByteSeq) =>
     // This can be _static as we use ByteSeq which is a val

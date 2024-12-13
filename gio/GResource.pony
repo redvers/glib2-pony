@@ -5,19 +5,19 @@ use "glib"
 use "gobject"
 
 use @printf[I32](fmt: Pointer[U8] tag, ...)
-use @g_resource_load[Pointer[_GResource] tag](str: Pointer[U8] tag, gerr: Pointer[NullablePointer[GError]])
-use @g_resource_new_from_data[Pointer[_GResource] tag](gbytes: Pointer[None], gerr: Pointer[NullablePointer[GError]])
-use @g_resource_unref[None](gobj: Pointer[_GResource] tag)
-use @g_resource_ref[Pointer[_GResource] tag](gobj: Pointer[_GResource] tag)
-use @g_resources_register[None](gobj: Pointer[_GResource] tag)
-use @g_resource_enumerate_children[Pointer[Pointer[U8]]](resource: Pointer[_GResource] tag, path: Pointer[U8] tag, lookupflags: I32, gerror: Pointer[NullablePointer[GError]] tag)
+use @g_resource_load[Pointer[GResourceS] tag](str: Pointer[U8] tag, gerr: Pointer[NullablePointer[GError]])
+use @g_resource_new_from_data[Pointer[GResourceS] tag](gbytes: Pointer[GBytesS] tag, gerr: Pointer[NullablePointer[GError]])
+use @g_resource_unref[None](gobj: Pointer[GResourceS] tag)
+use @g_resource_ref[Pointer[GResourceS] tag](gobj: Pointer[GResourceS] tag)
+use @g_resources_register[None](gobj: Pointer[GResourceS] tag)
+use @g_resource_enumerate_children[Pointer[Pointer[U8]]](resource: Pointer[GResourceS] tag, path: Pointer[U8] tag, lookupflags: I32, gerror: Pointer[NullablePointer[GError]] tag)
 use @g_strfreev[None](ppu8: Pointer[Pointer[U8]])
 
 class GResource
-  var ptr: Pointer[_GResource] tag
+  var ptr: Pointer[GResourceS] tag
   var ge: NullablePointer[GError] = NullablePointer[GError].none()
 
-  fun ref get_ptr(): Pointer[_GResource] tag => ptr
+  fun ref get_ptr(): Pointer[GResourceS] tag => ptr
 
   new new_from_data(gbytes: GBytes) => None
     ge.none()

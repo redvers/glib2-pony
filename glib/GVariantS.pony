@@ -7,5 +7,5 @@
 
   Fields (Offset in bits):
 */
-struct _GVariant
+struct GVariantS
 
