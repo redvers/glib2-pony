@@ -1,11 +1,11 @@
 | Object | Description |
 | ------ | ----------- |
 | GAllocator | |
-| **GArray** | |
+| **GArray** | Implemented |
 | GAsyncQueue | |
 | GBookmarkFile | |
 | GByteArray | |
-| **GBytes** | |
+| **GBytes** | Implemented |
 | GCache | |
 | GChecksum | |
 | GCompletion | |
@@ -15,7 +15,7 @@
 | GDateTime | |
 | GDebugKey | |
 | GDir | |
-| **GError** | |
+| **GError** | Implemented |
 | GHashTable | |
 | GHashTableIter | |
 | GHmac | |
@@ -25,9 +25,9 @@
 | GIOChannel | |
 | GIOFuncs | |
 | GKeyFile | |
-| **GList** | |
+| **GList** | Implemented |
 | GLogField | |
-| **GMainContext** | |
+| **GMainContext** | Implemented |
 | GMainLoop | |
 | GMappedFile | |
 | GMarkupParseContext | |
@@ -86,7 +86,7 @@
 | GUnixPipe | |
 | GUri | |
 | GUriParamsIter | |
-| **GVariant** | |
+| **GVariant** | Implemented |
 | GVariantBuilder | |
 | GVariantDict | |
 | GVariantIter | |

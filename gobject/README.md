@@ -11,7 +11,7 @@
 | GFlagsValue | |
 | GInitiallyUnowned | |
 | GInterfaceInfo | |
-| **GObject** | |
+| **GObject** | Implemented |
 | GObjectConstructParam | |
 | GParameter | |
 | GParamSpec | |
@@ -52,6 +52,6 @@
 | GTypePlugin | |
 | GTypeQuery | |
 | GTypeValueTable | |
-| **GValue** | |
+| **GValue** | Implemented |
 | GValueArray | |
 | GWeakRef | |

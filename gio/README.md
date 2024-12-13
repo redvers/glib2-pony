@@ -1,6 +1,6 @@
 | Object | Description |
 | ------ | ----------- |
-| **GActionEntry** | |
+| **GActionEntry** | Implemented |
 | GActionGroupInterface | |
 | GActionInterface | |
 | GActionMapInterface | |
@@ -8,7 +8,7 @@
 | GAppInfoMonitor | |
 | GAppLaunchContext | |
 | GAppLaunchContextPrivate | |
-| **GApplication** | |
+| **GApplication** | Implemented |
 | GApplicationCommandLine | |
 | GApplicationCommandLinePrivate | |
 | GApplicationPrivate | |
@@ -163,7 +163,7 @@
 | GRemoteActionGroupInterface | |
 | GResolver | |
 | GResolverPrivate | |
-| **GResource** | |
+| **GResource** | Implemented |
 | GSeekableIface | |
 | GSettings | |
 | GSettingsBackend | |
