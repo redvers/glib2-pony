@@ -1,6 +1,7 @@
 use "lib:glib-2.0"
 use @printf[I32](fmt: Pointer[U8] tag, ...)
 use @g_list_free[None](ptr: Pointer[None] tag)
+use @g_list_length[U32](ptr: Pointer[None] tag)
 use @g_list_nth_data[Pointer[None]](list: Pointer[None] tag, n: U32)
 
 class GList[A: Any]
@@ -9,6 +10,9 @@ class GList[A: Any]
 
   new create(free_on_gc': Bool) => None
     free_on_gc = free_on_gc'
+
+  fun length(): U32 =>
+    @g_list_length(ptr)
 
   fun nth_data(n: U32): A =>
     @g_list_nth_data[A](ptr, n)
