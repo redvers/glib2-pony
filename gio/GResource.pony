@@ -6,6 +6,7 @@ use "gobject"
 
 use @printf[I32](fmt: Pointer[U8] tag, ...)
 use @g_resource_load[Pointer[_GResource] tag](str: Pointer[U8] tag, gerr: Pointer[NullablePointer[GError]])
+use @g_resource_new_from_data[Pointer[_GResource] tag](gbytes: Pointer[None], gerr: Pointer[NullablePointer[GError]])
 use @g_resource_unref[None](gobj: Pointer[_GResource] tag)
 use @g_resource_ref[Pointer[_GResource] tag](gobj: Pointer[_GResource] tag)
 use @g_resources_register[None](gobj: Pointer[_GResource] tag)
@@ -18,16 +19,9 @@ class GResource
 
   fun ref get_ptr(): Pointer[_GResource] tag => ptr
 
-  fun ref enumerate_children(path: String val, flags: I32): Array[String val] val ? =>
-    // Ensure that our GError is null before we start
+  new new_from_data(gbytes: GBytes) => None
     ge.none()
-    let ppu8: Pointer[Pointer[U8]] = @g_resource_enumerate_children(ptr, path.cstring(), 0, addressof ge)
-    if (ge.is_none()) then
-      let r: Array[String val] val = PonyTypes.ppu8_to_array_string(ppu8)
-      @g_strfreev(ppu8)
-      return r
-    end
-    error
+    ptr = @g_resource_new_from_data(gbytes.ptr, addressof ge)
 
   new load(str: String val)? =>
     ge.none()
@@ -41,6 +35,17 @@ class GResource
       ge.apply()?.dispose()
       error
     end
+
+  fun ref enumerate_children(path: String val, flags: I32): Array[String val] val ? =>
+    // Ensure that our GError is null before we start
+    ge.none()
+    let ppu8: Pointer[Pointer[U8]] = @g_resource_enumerate_children(ptr, path.cstring(), 0, addressof ge)
+    if (ge.is_none()) then
+      let r: Array[String val] val = PonyTypes.ppu8_to_array_string(ppu8)
+      @g_strfreev(ppu8)
+      return r
+    end
+    error
 
   fun register() =>
     Debug.out("GResources.register()\n")
