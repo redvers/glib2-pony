@@ -1,245 +1,247 @@
-**GActionEntry**
-GActionGroupInterface
-GActionInterface
-GActionMapInterface
-GAppInfoIface
-GAppInfoMonitor
-GAppLaunchContext
-GAppLaunchContextPrivate
-**GApplication**
-GApplicationCommandLine
-GApplicationCommandLinePrivate
-GApplicationPrivate
-GAsyncInitableIface
-GAsyncResultIface
-GBufferedInputStream
-GBufferedInputStreamPrivate
-GBufferedOutputStream
-GBufferedOutputStreamPrivate
-GBytesIcon
-GCancellable
-GCancellablePrivate
-GCharsetConverter
-GConverterIface
-GConverterInputStream
-GConverterInputStreamPrivate
-GConverterOutputStream
-GConverterOutputStreamPrivate
-GCredentials
-GDatagramBasedInterface
-GDataInputStream
-GDataInputStreamPrivate
-GDataOutputStream
-GDataOutputStreamPrivate
-GDBusActionGroup
-GDBusAnnotationInfo
-GDBusArgInfo
-GDBusAuthObserver
-GDBusConnection
-GDBusErrorEntry
-GDBusInterfaceIface
-GDBusInterfaceInfo
-GDBusInterfaceSkeleton
-GDBusInterfaceSkeletonPrivate
-GDBusInterfaceVTable
-GDBusMenuModel
-GDBusMessage
-GDBusMethodInfo
-GDBusMethodInvocation
-GDBusNodeInfo
-GDBusObjectIface
-GDBusObjectManagerClient
-GDBusObjectManagerClientPrivate
-GDBusObjectManagerIface
-GDBusObjectManagerServer
-GDBusObjectManagerServerPrivate
-GDBusObjectProxy
-GDBusObjectProxyPrivate
-GDBusObjectSkeleton
-GDBusObjectSkeletonPrivate
-GDBusPropertyInfo
-GDBusProxy
-GDBusProxyPrivate
-GDBusServer
-GDBusSignalInfo
-GDBusSubtreeVTable
-GDebugControllerDBus
-GDebugControllerInterface
-GDesktopAppInfo
-GDesktopAppInfoLookupIface
-GDriveIface
-GDtlsClientConnectionInterface
-GDtlsConnectionInterface
-GDtlsServerConnectionInterface
-GEmblem
-GEmblemedIcon
-GEmblemedIconPrivate
-GFileAttributeInfo
-GFileAttributeInfoList
-GFileAttributeMatcher
-GFileDescriptorBasedIface
-GFileEnumerator
-GFileEnumeratorPrivate
-GFileIcon
-GFileIface
-GFileInfo
-GFileInputStream
-GFileInputStreamPrivate
-GFileIOStream
-GFileIOStreamPrivate
-GFileMonitor
-GFileMonitorPrivate
-GFilenameCompleter
-GFileOutputStream
-GFileOutputStreamPrivate
-GFilterInputStream
-GFilterOutputStream
-GIconIface
-GInetAddress
-GInetAddressMask
-GInetAddressMaskPrivate
-GInetAddressPrivate
-GInetSocketAddress
-GInetSocketAddressPrivate
-GInitableIface
-GInputMessage
-GInputStream
-GInputStreamPrivate
-GInputVector
-GIOExtension
-GIOExtensionPoint
-GIOModule
-GIOModuleScope
-GIOSchedulerJob
-GIOStream
-GIOStreamAdapter
-GIOStreamPrivate
-GListModelInterface
-GListStore
-GLoadableIconIface
-GMemoryInputStream
-GMemoryInputStreamPrivate
-GMemoryMonitorInterface
-GMemoryOutputStream
-GMemoryOutputStreamPrivate
-GMenu
-GMenuAttributeIter
-GMenuAttributeIterPrivate
-GMenuItem
-GMenuLinkIter
-GMenuLinkIterPrivate
-GMenuModel
-GMenuModelPrivate
-GMountIface
-GMountOperation
-GMountOperationPrivate
-GNativeSocketAddress
-GNativeSocketAddressPrivate
-GNativeVolumeMonitor
-GNetworkAddress
-GNetworkAddressPrivate
-GNetworkMonitorInterface
-GNetworkService
-GNetworkServicePrivate
-GNotification
-GOutputMessage
-GOutputStream
-GOutputStreamPrivate
-GOutputVector
-GPermission
-GPermissionPrivate
-GPollableInputStreamInterface
-GPollableOutputStreamInterface
-GPowerProfileMonitorInterface
-GPropertyAction
-GProxyAddress
-GProxyAddressEnumerator
-GProxyAddressEnumeratorPrivate
-GProxyAddressPrivate
-GProxyInterface
-GProxyResolverInterface
-GRemoteActionGroupInterface
-GResolver
-GResolverPrivate
-**GResource**
-GSeekableIface
-GSettings
-GSettingsBackend
-GSettingsBackendPrivate
-GSettingsPrivate
-GSettingsSchema
-GSettingsSchemaKey
-GSettingsSchemaSource
-GSimpleAction
-GSimpleActionGroup
-GSimpleActionGroupPrivate
-GSimpleAsyncResult
-GSimpleIOStream
-GSimplePermission
-GSimpleProxyResolver
-GSimpleProxyResolverPrivate
-GSocket
-GSocketAddress
-GSocketAddressEnumerator
-GSocketClient
-GSocketClientPrivate
-GSocketConnectableIface
-GSocketConnection
-GSocketConnectionPrivate
-GSocketControlMessage
-GSocketControlMessagePrivate
-GSocketListener
-GSocketListenerPrivate
-GSocketPrivate
-GSocketService
-GSocketServicePrivate
-GSrvTarget
-GStaticResource
-GSubprocess
-GSubprocessLauncher
-GTask
-GTcpConnection
-GTcpConnectionPrivate
-GTcpWrapperConnection
-GTcpWrapperConnectionPrivate
-GTestDBus
-GThemedIcon
-GThreadedResolver
-GThreadedSocketService
-GThreadedSocketServicePrivate
-GTlsBackendInterface
-GTlsCertificate
-GTlsCertificatePrivate
-GTlsClientConnectionInterface
-GTlsConnection
-GTlsConnectionPrivate
-GTlsDatabase
-GTlsDatabasePrivate
-GTlsFileDatabaseInterface
-GTlsInteraction
-GTlsInteractionPrivate
-GTlsPassword
-GTlsPasswordPrivate
-GTlsServerConnectionInterface
-GUnixConnection
-GUnixConnectionPrivate
-GUnixCredentialsMessage
-GUnixCredentialsMessagePrivate
-GUnixFDList
-GUnixFDListPrivate
-GUnixFDMessage
-GUnixFDMessagePrivate
-GUnixInputStream
-GUnixInputStreamPrivate
-GUnixMountEntry
-GUnixMountMonitor
-GUnixMountPoint
-GUnixOutputStream
-GUnixOutputStreamPrivate
-GUnixSocketAddress
-GUnixSocketAddressPrivate
-GVfs
-GVolumeIface
-GVolumeMonitor
-GZlibCompressor
-GZlibDecompressor
+| Object | Description |
+| ------ | ----------- |
+| **GActionEntry** | |
+| GActionGroupInterface | |
+| GActionInterface | |
+| GActionMapInterface | |
+| GAppInfoIface | |
+| GAppInfoMonitor | |
+| GAppLaunchContext | |
+| GAppLaunchContextPrivate | |
+| **GApplication** | |
+| GApplicationCommandLine | |
+| GApplicationCommandLinePrivate | |
+| GApplicationPrivate | |
+| GAsyncInitableIface | |
+| GAsyncResultIface | |
+| GBufferedInputStream | |
+| GBufferedInputStreamPrivate | |
+| GBufferedOutputStream | |
+| GBufferedOutputStreamPrivate | |
+| GBytesIcon | |
+| GCancellable | |
+| GCancellablePrivate | |
+| GCharsetConverter | |
+| GConverterIface | |
+| GConverterInputStream | |
+| GConverterInputStreamPrivate | |
+| GConverterOutputStream | |
+| GConverterOutputStreamPrivate | |
+| GCredentials | |
+| GDatagramBasedInterface | |
+| GDataInputStream | |
+| GDataInputStreamPrivate | |
+| GDataOutputStream | |
+| GDataOutputStreamPrivate | |
+| GDBusActionGroup | |
+| GDBusAnnotationInfo | |
+| GDBusArgInfo | |
+| GDBusAuthObserver | |
+| GDBusConnection | |
+| GDBusErrorEntry | |
+| GDBusInterfaceIface | |
+| GDBusInterfaceInfo | |
+| GDBusInterfaceSkeleton | |
+| GDBusInterfaceSkeletonPrivate | |
+| GDBusInterfaceVTable | |
+| GDBusMenuModel | |
+| GDBusMessage | |
+| GDBusMethodInfo | |
+| GDBusMethodInvocation | |
+| GDBusNodeInfo | |
+| GDBusObjectIface | |
+| GDBusObjectManagerClient | |
+| GDBusObjectManagerClientPrivate | |
+| GDBusObjectManagerIface | |
+| GDBusObjectManagerServer | |
+| GDBusObjectManagerServerPrivate | |
+| GDBusObjectProxy | |
+| GDBusObjectProxyPrivate | |
+| GDBusObjectSkeleton | |
+| GDBusObjectSkeletonPrivate | |
+| GDBusPropertyInfo | |
+| GDBusProxy | |
+| GDBusProxyPrivate | |
+| GDBusServer | |
+| GDBusSignalInfo | |
+| GDBusSubtreeVTable | |
+| GDebugControllerDBus | |
+| GDebugControllerInterface | |
+| GDesktopAppInfo | |
+| GDesktopAppInfoLookupIface | |
+| GDriveIface | |
+| GDtlsClientConnectionInterface | |
+| GDtlsConnectionInterface | |
+| GDtlsServerConnectionInterface | |
+| GEmblem | |
+| GEmblemedIcon | |
+| GEmblemedIconPrivate | |
+| GFileAttributeInfo | |
+| GFileAttributeInfoList | |
+| GFileAttributeMatcher | |
+| GFileDescriptorBasedIface | |
+| GFileEnumerator | |
+| GFileEnumeratorPrivate | |
+| GFileIcon | |
+| GFileIface | |
+| GFileInfo | |
+| GFileInputStream | |
+| GFileInputStreamPrivate | |
+| GFileIOStream | |
+| GFileIOStreamPrivate | |
+| GFileMonitor | |
+| GFileMonitorPrivate | |
+| GFilenameCompleter | |
+| GFileOutputStream | |
+| GFileOutputStreamPrivate | |
+| GFilterInputStream | |
+| GFilterOutputStream | |
+| GIconIface | |
+| GInetAddress | |
+| GInetAddressMask | |
+| GInetAddressMaskPrivate | |
+| GInetAddressPrivate | |
+| GInetSocketAddress | |
+| GInetSocketAddressPrivate | |
+| GInitableIface | |
+| GInputMessage | |
+| GInputStream | |
+| GInputStreamPrivate | |
+| GInputVector | |
+| GIOExtension | |
+| GIOExtensionPoint | |
+| GIOModule | |
+| GIOModuleScope | |
+| GIOSchedulerJob | |
+| GIOStream | |
+| GIOStreamAdapter | |
+| GIOStreamPrivate | |
+| GListModelInterface | |
+| GListStore | |
+| GLoadableIconIface | |
+| GMemoryInputStream | |
+| GMemoryInputStreamPrivate | |
+| GMemoryMonitorInterface | |
+| GMemoryOutputStream | |
+| GMemoryOutputStreamPrivate | |
+| GMenu | |
+| GMenuAttributeIter | |
+| GMenuAttributeIterPrivate | |
+| GMenuItem | |
+| GMenuLinkIter | |
+| GMenuLinkIterPrivate | |
+| GMenuModel | |
+| GMenuModelPrivate | |
+| GMountIface | |
+| GMountOperation | |
+| GMountOperationPrivate | |
+| GNativeSocketAddress | |
+| GNativeSocketAddressPrivate | |
+| GNativeVolumeMonitor | |
+| GNetworkAddress | |
+| GNetworkAddressPrivate | |
+| GNetworkMonitorInterface | |
+| GNetworkService | |
+| GNetworkServicePrivate | |
+| GNotification | |
+| GOutputMessage | |
+| GOutputStream | |
+| GOutputStreamPrivate | |
+| GOutputVector | |
+| GPermission | |
+| GPermissionPrivate | |
+| GPollableInputStreamInterface | |
+| GPollableOutputStreamInterface | |
+| GPowerProfileMonitorInterface | |
+| GPropertyAction | |
+| GProxyAddress | |
+| GProxyAddressEnumerator | |
+| GProxyAddressEnumeratorPrivate | |
+| GProxyAddressPrivate | |
+| GProxyInterface | |
+| GProxyResolverInterface | |
+| GRemoteActionGroupInterface | |
+| GResolver | |
+| GResolverPrivate | |
+| **GResource** | |
+| GSeekableIface | |
+| GSettings | |
+| GSettingsBackend | |
+| GSettingsBackendPrivate | |
+| GSettingsPrivate | |
+| GSettingsSchema | |
+| GSettingsSchemaKey | |
+| GSettingsSchemaSource | |
+| GSimpleAction | |
+| GSimpleActionGroup | |
+| GSimpleActionGroupPrivate | |
+| GSimpleAsyncResult | |
+| GSimpleIOStream | |
+| GSimplePermission | |
+| GSimpleProxyResolver | |
+| GSimpleProxyResolverPrivate | |
+| GSocket | |
+| GSocketAddress | |
+| GSocketAddressEnumerator | |
+| GSocketClient | |
+| GSocketClientPrivate | |
+| GSocketConnectableIface | |
+| GSocketConnection | |
+| GSocketConnectionPrivate | |
+| GSocketControlMessage | |
+| GSocketControlMessagePrivate | |
+| GSocketListener | |
+| GSocketListenerPrivate | |
+| GSocketPrivate | |
+| GSocketService | |
+| GSocketServicePrivate | |
+| GSrvTarget | |
+| GStaticResource | |
+| GSubprocess | |
+| GSubprocessLauncher | |
+| GTask | |
+| GTcpConnection | |
+| GTcpConnectionPrivate | |
+| GTcpWrapperConnection | |
+| GTcpWrapperConnectionPrivate | |
+| GTestDBus | |
+| GThemedIcon | |
+| GThreadedResolver | |
+| GThreadedSocketService | |
+| GThreadedSocketServicePrivate | |
+| GTlsBackendInterface | |
+| GTlsCertificate | |
+| GTlsCertificatePrivate | |
+| GTlsClientConnectionInterface | |
+| GTlsConnection | |
+| GTlsConnectionPrivate | |
+| GTlsDatabase | |
+| GTlsDatabasePrivate | |
+| GTlsFileDatabaseInterface | |
+| GTlsInteraction | |
+| GTlsInteractionPrivate | |
+| GTlsPassword | |
+| GTlsPasswordPrivate | |
+| GTlsServerConnectionInterface | |
+| GUnixConnection | |
+| GUnixConnectionPrivate | |
+| GUnixCredentialsMessage | |
+| GUnixCredentialsMessagePrivate | |
+| GUnixFDList | |
+| GUnixFDListPrivate | |
+| GUnixFDMessage | |
+| GUnixFDMessagePrivate | |
+| GUnixInputStream | |
+| GUnixInputStreamPrivate | |
+| GUnixMountEntry | |
+| GUnixMountMonitor | |
+| GUnixMountPoint | |
+| GUnixOutputStream | |
+| GUnixOutputStreamPrivate | |
+| GUnixSocketAddress | |
+| GUnixSocketAddressPrivate | |
+| GVfs | |
+| GVolumeIface | |
+| GVolumeMonitor | |
+| GZlibCompressor | |
+| GZlibDecompressor | |
