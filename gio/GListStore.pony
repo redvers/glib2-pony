@@ -7,7 +7,7 @@ use @g_list_store_append[None](store: NullablePointer[GObjectS] tag, item: Nulla
 class GListStore is (GObjectInterface & GListModelInterface)
   var ptr: NullablePointer[GObjectS]
 
-  fun ref get_ptr(): NullablePointer[GObjectS] tag => ptr
+  fun ref get_ptr(): NullablePointer[GObjectS] => ptr
 
   new create(itemtype: U64) =>
     ptr = @g_list_store_new(itemtype)

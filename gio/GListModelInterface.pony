@@ -5,7 +5,7 @@ use @g_list_model_get_item_type[U64](list: NullablePointer[GObjectS] tag)
 use @g_list_model_get_object[NullablePointer[GObjectS]](list: NullablePointer[GObjectS] tag, posn: U32)
 
 interface GListModelInterface
-  fun ref get_ptr(): NullablePointer[GObjectS] tag
+  fun ref get_ptr(): NullablePointer[GObjectS]
 
   fun ref get_item_type(): U64 =>
     GListModel.get_item_type(get_ptr())
