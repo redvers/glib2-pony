@@ -39,7 +39,7 @@ primitive GObject
     @g_object_get_data[A](gobj, key)
 
 interface GObjectInterface
-  fun ref get_ptr(): NullablePointer[GObjectS] tag
+  fun ref get_ptr(): NullablePointer[GObjectS]
   fun ref signal_connect_data[A: Any](signal: String val, chandler: GCallback[A], data: A) => None
     GObject.signal_connect_data[A](get_ptr(), signal.cstring(), chandler, consume data)
 

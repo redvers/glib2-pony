@@ -31,7 +31,7 @@ class GPony is GObjectInterface
   fun ref get_pointer[C: Any](): C =>
     @g_value_get_pointer[C](NullablePointer[GValueS](ptr.data))
 
-  fun ref get_ptr(): NullablePointer[GObjectS] tag =>
+  fun ref get_ptr(): NullablePointer[GObjectS] =>
     NullablePointer[GObjectS](ptr.parent_instance)
 
   fun ref get_type(): U64 => gtype
