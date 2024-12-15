@@ -9,8 +9,8 @@
      000064: [FundamentalType(unsigned int) size=32]: ref_count
      000128: [PointerType size=64]->[Struct size=,fid: f68]: qdata
 */
-struct GObjectS
-    embed g_type_instance: GTypeInstanceS = GTypeInstanceS
+struct GObjectStruct
+    embed g_type_instance: GTypeInstanceStruct = GTypeInstanceStruct
     var ref_count: U32 = U32(0)
-    var qdata: NullablePointer[GDataS] = NullablePointer[GDataS].none()
+    var qdata: NullablePointer[GDataStruct] = NullablePointer[GDataStruct].none()
 

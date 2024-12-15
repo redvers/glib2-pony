@@ -16,7 +16,7 @@
      000448: [PointerType size=64]->[FunctionType] -- WRITE MANUALLY: instance_init
      000512: [PointerType size=64]->[Struct size=512,fid: f135]: value_table
 */
-struct GTypeInfoS
+struct GTypeInfoStruct
     var class_size: U16 = U16(0)
     var base_init: Pointer[None] = Pointer[None]
     var base_finalize: Pointer[None] = Pointer[None]
@@ -26,5 +26,5 @@ struct GTypeInfoS
     var instance_size: U16 = U16(0)
     var n_preallocs: U16 = U16(0)
     var instance_init: Pointer[None] = Pointer[None]
-    var value_table: NullablePointer[GTypeValueTableS] = NullablePointer[GTypeValueTableS].none()
+    var value_table: NullablePointer[GTypeValueTableStruct] = NullablePointer[GTypeValueTableStruct].none()
 

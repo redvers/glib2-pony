@@ -21,9 +21,9 @@
      000832: [FundamentalType(long unsigned int) size=64]: n_pspecs
      000896: [ArrayType size=(0-2)]->[PointerType size=64]->[FundamentalType(void) size=0] -- UNSUPPORTED: pdummy
 */
-struct GObjectClassS
-    embed g_type_class: GTypeClassS = GTypeClassS
-    var construct_properties: NullablePointer[GSListS] = NullablePointer[GSListS].none()
+struct GObjectClassStruct
+    embed g_type_class: GTypeClassStruct = GTypeClassStruct
+    var construct_properties: NullablePointer[GSListStruct] = NullablePointer[GSListStruct].none()
     var constructor: Pointer[None] = Pointer[None]
     var set_property: Pointer[None] = Pointer[None]
     var get_property: Pointer[None] = Pointer[None]
