@@ -19,7 +19,7 @@ use "gio"
      000512: [FundamentalType(unsigned int) size=32]: ref_count
      000544: [FundamentalType(unsigned int) size=32]: param_id
 */
-struct GParamSpec
+struct GParamSpecS
     embed g_type_instance: GTypeInstanceS = GTypeInstanceS
     var name: Pointer[U8] = Pointer[U8]
     var flags: I32 = I32(0)

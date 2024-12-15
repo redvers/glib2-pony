@@ -5,9 +5,15 @@ use @g_object_unref[None](gobj: NullablePointer[GObjectS] tag)
 use @g_signal_connect_data[U64](instance: NullablePointer[GObjectS] tag, signal: Pointer[U8] tag, ...)
 use @g_object_set_data[None](gobj: NullablePointer[GObjectS] tag, key: Pointer[U8] tag, data: Any tag)
 use @g_object_get_data[Any tag](gobj: NullablePointer[GObjectS] tag, key: Pointer[U8] tag)
+use @g_object_class_list_properties[Pointer[NullablePointer[GParamSpecS]]](oclass: NullablePointer[GObjectClassS] tag, nproperties: Pointer[U32] tag)
+use @g_type_class_ref[NullablePointer[GObjectClassS]](gtype: U64)
+
+use @printf[U32](fmt: Pointer[U8] tag, ...)
 
 use "debug"
 use "lib:gobject-2.0"
+use "gio"
+use "glib"
 
 
 primitive GObject
@@ -38,6 +44,27 @@ primitive GObject
   fun get_data[A: Any tag](gobj: NullablePointer[GObjectS] tag, key: Pointer[U8] tag): A tag =>
     @g_object_get_data[A](gobj, key)
 
+  fun g_type_class_ref(gtype: U64): NullablePointer[GObjectClassS] =>
+    @g_type_class_ref(gtype)
+
+  fun g_object_class_list_properties(oclass: NullablePointer[GObjectClassS] tag) =>
+    var count: U32 = 0
+    let q: Pointer[NullablePointer[GParamSpecS]] = @g_object_class_list_properties(oclass, addressof count)
+    @printf("Got %d properties\n".cstring(), count)
+
+    let array: Array[NullablePointer[GParamSpecS]] =
+      Array[NullablePointer[GParamSpecS]].from_cpointer(q, count.usize())
+
+    try
+      for g in array.values() do
+        @printf("%s\n".cstring(), g.apply()?.name)
+      end
+    else
+      @printf("I borked\n".cstring())
+    end
+
+
+
 interface GObjectInterface
   fun ref get_ptr(): NullablePointer[GObjectS]
   fun ref signal_connect_data[A: Any](signal: String val, chandler: GCallback[A], data: A) => None
@@ -55,7 +82,23 @@ interface GObjectInterface
   fun ref gref() =>
     GObject.gref(get_ptr())
 
+  fun ref list_properties() => None
+    let ptr: NullablePointer[GObjectS] = get_ptr()
 
+    let gtype: U64 =
+    try
+      let gobj: GObjectS = ptr.apply()?
+      let gtcs: NullablePointer[GTypeClassS] = gobj.g_type_instance.g_class
+      let gtc: GTypeClassS = gtcs.apply()?
+      gtc.g_type
+    else
+      0
+    end
+    let goc: NullablePointer[GObjectClassS] = GObject.g_type_class_ref(gtype)
+    GObject.g_object_class_list_properties(goc)
+
+
+//    @g_object_class_list_properties(oclass: NullablePointer[GObjectClassS] tag, nproperties: Pointer[U32] tag)
 
 //  fun gref(gobj: NullablePointer[GObjectS] tag): Pointer[GObject] tag =>
 //    @g_object_ref(gobj)
