@@ -9,9 +9,9 @@
      000064: [PointerType size=64]->[Struct size=192,fid: f78]: next
      000128: [PointerType size=64]->[Struct size=192,fid: f78]: prev
 */
-struct GListS[A: Any]
+struct GListStruct[A: Any]
     var data: A
-    var next: NullablePointer[GListS[A]] = NullablePointer[GListS[A]].none()
-    var prev: NullablePointer[GListS[A]] = NullablePointer[GListS[A]].none()
+    var next: NullablePointer[GListStruct[A]] = NullablePointer[GListStruct[A]].none()
+    var prev: NullablePointer[GListStruct[A]] = NullablePointer[GListStruct[A]].none()
 
   new create(d: A) => data = consume d

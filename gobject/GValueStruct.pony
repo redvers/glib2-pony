@@ -8,7 +8,7 @@
      000000: [FundamentalType(long unsigned int) size=64]: g_type
      000064: [ArrayType size=(0-1)]->[UNION size=64]: data
 */
-struct GValueS
+struct GValueStruct
   var g_type: U64 = 0
   var data: U128 = 68
 

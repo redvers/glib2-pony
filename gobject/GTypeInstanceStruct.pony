@@ -7,6 +7,6 @@
   Fields (Offset in bits):
      000000: [PointerType size=64]->[Struct size=64,fid: f135]: g_class
 */
-struct GTypeInstanceS
-    var g_class: NullablePointer[GTypeClassS] = NullablePointer[GTypeClassS].none()
+struct GTypeInstanceStruct
+    var g_class: NullablePointer[GTypeClassStruct] = NullablePointer[GTypeClassStruct].none()
 

@@ -7,6 +7,6 @@
   Fields (Offset in bits):
      000000: [FundamentalType(long unsigned int) size=64]: g_type
 */
-struct GTypeClassS
+struct GTypeClassStruct
     var g_type: U64 = U64(0)
 

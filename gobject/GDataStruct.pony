@@ -6,5 +6,5 @@
 
   Fields (Offset in bits):
 */
-struct GDataS
+struct GDataStruct
 

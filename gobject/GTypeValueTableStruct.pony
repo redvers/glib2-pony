@@ -14,7 +14,7 @@
      000384: [PointerType size=64]->[FundamentalType(char) size=8]: lcopy_format
      000448: [PointerType size=64]->[FunctionType] -- WRITE MANUALLY: lcopy_value
 */
-struct GTypeValueTableS
+struct GTypeValueTableStruct
     var value_init: Pointer[None] = Pointer[None]
     var value_free: Pointer[None] = Pointer[None]
     var value_copy: Pointer[None] = Pointer[None]
