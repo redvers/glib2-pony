@@ -1,15 +1,20 @@
-
-
 /*
-  Source: /usr/include/glib-2.0/glib/garray.h:43
-  Original Name: _GArray
-  Struct Size (bits):  128
-  Struct Align (bits): 64
-
-  Fields (Offset in bits):
-     000000: [PointerType size=64]->[FundamentalType(char) size=8]: data
-     000064: [FundamentalType(unsigned int) size=32]: len
-*/
+ * name: Array
+ * c:type: GArray
+ * glib:is-gtype-struct-for: 
+ * opaque: 
+ * disguised: 
+ * glib:type-name: GArray
+ * glib:get-type: g_array_get_type
+ * c:symbol-prefix: array
+ * c:copy-function: 
+ * c:free-function: 
+ * deprecated: 
+ */
 struct GArrayStruct
-  var data: Pointer[U8] = Pointer[U8]
-  var len: U32 = U32(0)
+"""
+Contains the public fields of a GArray.
+"""
+  var data: Pointer[U8] ref = recover iso Pointer[U8] end
+  var len: U32 = 0
+

@@ -1,0 +1,8 @@
+use @g_error_copy[GErrorStruct](gerror: GErrorStruct tag)
+use @g_error_domain_register_static[U32](errortypename: Pointer[U8] tag, errortypeprivatesize: U64, errortypeinit: Pointer[None] tag, errortypecopy: Pointer[None] tag, errortypeclear: Pointer[None] tag)
+use @g_error_domain_register[U32](errortypename: Pointer[U8] tag, errortypeprivatesize: U64, errortypeinit: Pointer[None] tag, errortypecopy: Pointer[None] tag, errortypeclear: Pointer[None] tag)
+use @g_error_free[None](gerror: GErrorStruct tag)
+use @g_error_get_type[U64]()
+use @g_error_matches[I32](gerror: GErrorStruct tag, domain: U32, code: I32)
+use @g_error_new_literal[GErrorStruct](domain: U32, code: I32, message: Pointer[U8] tag)
+use @g_error_new[GErrorStruct](domain: U32, code: I32, format: Pointer[U8] tag, ...)
