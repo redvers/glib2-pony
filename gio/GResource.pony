@@ -5,17 +5,17 @@ use "glib"
 use "gobject"
 
 use @printf[I32](fmt: Pointer[U8] tag, ...)
-use @g_resource_load[Pointer[GResourceStruct] tag](str: Pointer[U8] tag, gerr: Pointer[NullablePointer[GError]])
-use @g_resource_new_from_data[Pointer[GResourceStruct] tag](gbytes: Pointer[GBytesStruct] tag, gerr: Pointer[NullablePointer[GError]])
+use @g_resource_load[Pointer[GResourceStruct] tag](str: Pointer[U8] tag, gerr: Pointer[NullablePointer[GErrorStruct]])
+use @g_resource_new_from_data[Pointer[GResourceStruct] tag](gbytes: Pointer[GBytesStruct] tag, gerr: Pointer[NullablePointer[GErrorStruct]])
 use @g_resource_unref[None](gobj: Pointer[GResourceStruct] tag)
 use @g_resource_ref[Pointer[GResourceStruct] tag](gobj: Pointer[GResourceStruct] tag)
 use @g_resources_register[None](gobj: Pointer[GResourceStruct] tag)
-use @g_resource_enumerate_children[Pointer[Pointer[U8]]](resource: Pointer[GResourceStruct] tag, path: Pointer[U8] tag, lookupflags: I32, gerror: Pointer[NullablePointer[GError]] tag)
+use @g_resource_enumerate_children[Pointer[Pointer[U8]]](resource: Pointer[GResourceStruct] tag, path: Pointer[U8] tag, lookupflags: I32, gerror: Pointer[NullablePointer[GErrorStruct]] tag)
 use @g_strfreev[None](ppu8: Pointer[Pointer[U8]])
 
 class GResource
   var ptr: Pointer[GResourceStruct] tag
-  var ge: NullablePointer[GError] = NullablePointer[GError].none()
+  var ge: NullablePointer[GErrorStruct] = NullablePointer[GErrorStruct].none()
 
   fun ref get_ptr(): Pointer[GResourceStruct] tag => ptr
 
@@ -37,7 +37,7 @@ class GResource
     end
 
   fun ref enumerate_children(path: String val, flags: I32): Array[String val] val ? =>
-    // Ensure that our GError is null before we start
+    // Ensure that our GErrorStruct is null before we start
     ge.none()
     let ppu8: Pointer[Pointer[U8]] = @g_resource_enumerate_children(ptr, path.cstring(), 0, addressof ge)
     if (ge.is_none()) then

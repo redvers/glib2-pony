@@ -1,5 +1,3 @@
-use @g_error_free[None](g: GError tag)
-
 /*
   Source: /usr/include/glib-2.0/glib/gerror.h:45
   Original Name: _GError
@@ -12,7 +10,7 @@ use @g_error_free[None](g: GError tag)
      000064: [PointerType size=64]->[FundamentalType(char) size=8]: message
 */
 
-struct GError
+struct GErrorStruct
   var domain: U32 = 0
   var code: I32 = 0
   var message: Pointer[U8] ref = recover iso Pointer[U8] end

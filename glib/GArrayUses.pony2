@@ -1,0 +1,338 @@
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:104
+  Original Name: g_array_append_vals/usr/include/glib-2.0/glib/garray.h:104
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [PointerType size=64]->[FundamentalType(void) size=0]
+    [FundamentalType(unsigned int) size=32]
+*/
+use @g_array_append_vals[NullablePointer[GArray]](array: NullablePointer[GArray] tag, data: Pointer[None] tag, len: U32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:137
+  Original Name: g_array_binary_search/usr/include/glib-2.0/glib/garray.h:137
+
+  Return Value: [FundamentalType(int) size=32]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [PointerType size=64]->[FundamentalType(void) size=0]
+    [PointerType size=64]->[FunctionType]  WRITE MANUALLY
+    [PointerType size=64]->[FundamentalType(unsigned int) size=32]
+*/
+use @g_array_binary_search[I32](array: NullablePointer[GArray] tag, target: Pointer[None] tag, comparefunc: Pointer[None] tag, outmatchindex: Pointer[U32] tag)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:93
+  Original Name: g_array_copy/usr/include/glib-2.0/glib/garray.h:93
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+*/
+use @g_array_copy[NullablePointer[GArray]](array: NullablePointer[GArray] tag)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:95
+  Original Name: g_array_free/usr/include/glib-2.0/glib/garray.h:95
+
+  Return Value: [PointerType size=64]->[FundamentalType(char) size=8]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [FundamentalType(int) size=32]
+*/
+use @g_array_free[Pointer[U8]](array: NullablePointer[GArray] tag, freesegment: I32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:102
+  Original Name: g_array_get_element_size/usr/include/glib-2.0/glib/garray.h:102
+
+  Return Value: [FundamentalType(unsigned int) size=32]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+*/
+use @g_array_get_element_size[U32](array: NullablePointer[GArray] tag)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/gobject/glib-types.h:384
+  Original Name: g_array_get_type/usr/include/glib-2.0/gobject/glib-types.h:384
+
+  Return Value: [FundamentalType(long unsigned int) size=64]
+
+  Arguments:
+*/
+use @g_array_get_type[U64]()
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:112
+  Original Name: g_array_insert_vals/usr/include/glib-2.0/glib/garray.h:112
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [FundamentalType(unsigned int) size=32]
+    [PointerType size=64]->[FundamentalType(void) size=0]
+    [FundamentalType(unsigned int) size=32]
+*/
+use @g_array_insert_vals[NullablePointer[GArray]](array: NullablePointer[GArray] tag, index: U32, data: Pointer[None] tag, len: U32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:76
+  Original Name: g_array_new_take/usr/include/glib-2.0/glib/garray.h:76
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[FundamentalType(void) size=0]
+    [FundamentalType(long unsigned int) size=64]
+    [FundamentalType(int) size=32]
+    [FundamentalType(long unsigned int) size=64]
+*/
+use @g_array_new_take[NullablePointer[GArray]](data: Pointer[None] tag, len: U64, clear: I32, elementsize: U64)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:81
+  Original Name: g_array_new_take_zero_terminated/usr/include/glib-2.0/glib/garray.h:81
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[FundamentalType(void) size=0]
+    [FundamentalType(int) size=32]
+    [FundamentalType(long unsigned int) size=64]
+*/
+use @g_array_new_take_zero_terminated[NullablePointer[GArray]](data: Pointer[None] tag, clear: I32, elementsize: U64)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:72
+  Original Name: g_array_new/usr/include/glib-2.0/glib/garray.h:72
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [FundamentalType(int) size=32]
+    [FundamentalType(int) size=32]
+    [FundamentalType(unsigned int) size=32]
+*/
+use @g_array_new[NullablePointer[GArray]](zeroterminated: I32, clear: I32, elementsize: U32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:108
+  Original Name: g_array_prepend_vals/usr/include/glib-2.0/glib/garray.h:108
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [PointerType size=64]->[FundamentalType(void) size=0]
+    [FundamentalType(unsigned int) size=32]
+*/
+use @g_array_prepend_vals[NullablePointer[GArray]](array: NullablePointer[GArray] tag, data: Pointer[None] tag, len: U32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:98
+  Original Name: g_array_ref/usr/include/glib-2.0/glib/garray.h:98
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+*/
+use @g_array_ref[NullablePointer[GArray]](array: NullablePointer[GArray] tag)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:123
+  Original Name: g_array_remove_index_fast/usr/include/glib-2.0/glib/garray.h:123
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [FundamentalType(unsigned int) size=32]
+*/
+use @g_array_remove_index_fast[NullablePointer[GArray]](array: NullablePointer[GArray] tag, index: U32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:120
+  Original Name: g_array_remove_index/usr/include/glib-2.0/glib/garray.h:120
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [FundamentalType(unsigned int) size=32]
+*/
+use @g_array_remove_index[NullablePointer[GArray]](array: NullablePointer[GArray] tag, index: U32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:126
+  Original Name: g_array_remove_range/usr/include/glib-2.0/glib/garray.h:126
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [FundamentalType(unsigned int) size=32]
+    [FundamentalType(unsigned int) size=32]
+*/
+use @g_array_remove_range[NullablePointer[GArray]](array: NullablePointer[GArray] tag, index: U32, length: U32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:142
+  Original Name: g_array_set_clear_func/usr/include/glib-2.0/glib/garray.h:142
+
+  Return Value: [FundamentalType(void) size=0]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [PointerType size=64]->[FunctionType]  WRITE MANUALLY
+*/
+use @g_array_set_clear_func[None](array: NullablePointer[GArray] tag, clearfunc: Pointer[None] tag)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:117
+  Original Name: g_array_set_size/usr/include/glib-2.0/glib/garray.h:117
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [FundamentalType(unsigned int) size=32]
+*/
+use @g_array_set_size[NullablePointer[GArray]](array: NullablePointer[GArray] tag, length: U32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:88
+  Original Name: g_array_sized_new/usr/include/glib-2.0/glib/garray.h:88
+
+  Return Value: [PointerType size=64]->[Struct size=128,fid: f19]
+
+  Arguments:
+    [FundamentalType(int) size=32]
+    [FundamentalType(int) size=32]
+    [FundamentalType(unsigned int) size=32]
+    [FundamentalType(unsigned int) size=32]
+*/
+use @g_array_sized_new[NullablePointer[GArray]](zeroterminated: I32, clear: I32, elementsize: U32, reservedsize: U32)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:130
+  Original Name: g_array_sort/usr/include/glib-2.0/glib/garray.h:130
+
+  Return Value: [FundamentalType(void) size=0]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [PointerType size=64]->[FunctionType]  WRITE MANUALLY
+*/
+use @g_array_sort[None](array: NullablePointer[GArray] tag, comparefunc: Pointer[None] tag)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:133
+  Original Name: g_array_sort_with_data/usr/include/glib-2.0/glib/garray.h:133
+
+  Return Value: [FundamentalType(void) size=0]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [PointerType size=64]->[FunctionType]  WRITE MANUALLY
+    [PointerType size=64]->[FundamentalType(void) size=0]
+*/
+use @g_array_sort_with_data[None](array: NullablePointer[GArray] tag, comparefunc: Pointer[None] tag, userdata: Pointer[None] tag)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:85
+  Original Name: g_array_steal/usr/include/glib-2.0/glib/garray.h:85
+
+  Return Value: [PointerType size=64]->[FundamentalType(void) size=0]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+    [PointerType size=64]->[FundamentalType(long unsigned int) size=64]
+*/
+use @g_array_steal[Pointer[None]](array: NullablePointer[GArray] tag, len: Pointer[U64] tag)
+
+
+
+/*
+  Source: /usr/include/glib-2.0/glib/garray.h:100
+  Original Name: g_array_unref/usr/include/glib-2.0/glib/garray.h:100
+
+  Return Value: [FundamentalType(void) size=0]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=128,fid: f19]
+*/
+use @g_array_unref[None](array: NullablePointer[GArray] tag)
+
+use @g_array_append_vals[NullablePointer[GArray]](array: NullablePointer[GArray] tag, data: Pointer[None] tag, len: U32)
+use @g_array_binary_search[I32](array: NullablePointer[GArray] tag, target: Pointer[None] tag, comparefunc: Pointer[None] tag, outmatchindex: Pointer[U32] tag)
+use @g_array_copy[NullablePointer[GArray]](array: NullablePointer[GArray] tag)
+use @g_array_free[Pointer[U8]](array: NullablePointer[GArray] tag, freesegment: I32)
+use @g_array_get_element_size[U32](array: NullablePointer[GArray] tag)
+use @g_array_get_type[U64]()
+use @g_array_insert_vals[NullablePointer[GArray]](array: NullablePointer[GArray] tag, index: U32, data: Pointer[None] tag, len: U32)
+use @g_array_new_take[NullablePointer[GArray]](data: Pointer[None] tag, len: U64, clear: I32, elementsize: U64)
+use @g_array_new_take_zero_terminated[NullablePointer[GArray]](data: Pointer[None] tag, clear: I32, elementsize: U64)
+use @g_array_new[NullablePointer[GArray]](zeroterminated: I32, clear: I32, elementsize: U32)
+use @g_array_prepend_vals[NullablePointer[GArray]](array: NullablePointer[GArray] tag, data: Pointer[None] tag, len: U32)
+use @g_array_ref[NullablePointer[GArray]](array: NullablePointer[GArray] tag)
+use @g_array_remove_index_fast[NullablePointer[GArray]](array: NullablePointer[GArray] tag, index: U32)
+use @g_array_remove_index[NullablePointer[GArray]](array: NullablePointer[GArray] tag, index: U32)
+use @g_array_remove_range[NullablePointer[GArray]](array: NullablePointer[GArray] tag, index: U32, length: U32)
+use @g_array_set_clear_func[None](array: NullablePointer[GArray] tag, clearfunc: Pointer[None] tag)
+use @g_array_set_size[NullablePointer[GArray]](array: NullablePointer[GArray] tag, length: U32)
+use @g_array_sized_new[NullablePointer[GArray]](zeroterminated: I32, clear: I32, elementsize: U32, reservedsize: U32)
+use @g_array_sort[None](array: NullablePointer[GArray] tag, comparefunc: Pointer[None] tag)
+use @g_array_sort_with_data[None](array: NullablePointer[GArray] tag, comparefunc: Pointer[None] tag, userdata: Pointer[None] tag)
+use @g_array_steal[Pointer[None]](array: NullablePointer[GArray] tag, len: Pointer[U64] tag)
+use @g_array_unref[None](array: NullablePointer[GArray] tag)
