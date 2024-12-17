@@ -7,6 +7,7 @@ use @g_object_set_data[None](gobj: GObjectStruct tag, key: Pointer[U8] tag, data
 use @g_object_get_data[Any tag](gobj: GObjectStruct tag, key: Pointer[U8] tag)
 use @g_object_class_list_properties[Pointer[NullablePointer[GParamSpecStruct]]](oclass: NullablePointer[GObjectClassStruct] tag, nproperties: Pointer[U32] tag)
 use @g_type_class_ref[NullablePointer[GObjectClassStruct]](gtype: U64)
+use @g_type_name_from_instance[Pointer[U8]](instance: NullablePointer[GObjectStruct] tag)
 
 use @printf[U32](fmt: Pointer[U8] tag, ...)
 
@@ -62,6 +63,10 @@ primitive GObject
     else
       @printf("I borked\n".cstring())
     end
+
+  fun name_from_instance(instance: NullablePointer[GObjectStruct]): String val =>
+    var cptr: Pointer[U8] = @g_type_name_from_instance[Pointer[U8]](instance)
+    String.from_cstring(cptr).clone()
 
 type GCallback[A: Any] is @{(GObjectStruct tag): None}
 type GCallback2 is @{(GObjectStruct tag): None}

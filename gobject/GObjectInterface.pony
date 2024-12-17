@@ -34,6 +34,10 @@ interface GObjectInterface
     let goc: NullablePointer[GObjectClassStruct] = GObject.g_type_class_ref(gtype)
     GObject.g_object_class_list_properties(goc)
 
+  fun name_from_instance(instance: NullablePointer[GObjectStruct]): String val =>
+    GObject.name_from_instance(instance)
+
+
 
 //    @g_object_class_list_properties(oclass: NullablePointer[GObjectClassStruct] tag, nproperties: Pointer[U32] tag)
 
