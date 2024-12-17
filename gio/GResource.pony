@@ -32,7 +32,7 @@ class GResource
       @printf("domain: %d\n".cstring(), ge.apply()?.domain)
       @printf("code: %d\n".cstring(), ge.apply()?.code)
       @printf("message: %s\n".cstring(), ge.apply()?.message)
-      ge.apply()?.dispose()
+//      ge.apply()?.dispose() FIXME
       error
     end
 
