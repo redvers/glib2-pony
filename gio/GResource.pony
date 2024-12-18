@@ -15,32 +15,32 @@ use @g_strfreev[None](ppu8: Pointer[Pointer[U8]])
 
 class GResource
   var ptr: Pointer[GResourceStruct] tag
-  var ge: NullablePointer[GErrorStruct] = NullablePointer[GErrorStruct].none()
 
   fun ref get_ptr(): Pointer[GResourceStruct] tag => ptr
 
   new new_from_data(gbytes: GBytes) => None
-    ge.none()
-    ptr = @g_resource_new_from_data(gbytes.ptr, addressof ge)
+    var gerror: GError = GError
+    ptr = @g_resource_new_from_data(gbytes.ptr, addressof gerror.ptr)
 
   new load(str: String val)? =>
-    ge.none()
-    ptr = @g_resource_load(str.cstring(), addressof ge)
-    if (ge.is_none()) then
+//    ge.none()
+    var gerror: GError = GError
+    ptr = @g_resource_load(str.cstring(), addressof gerror.ptr)
+    if (gerror.ptr.is_none()) then
       @g_resource_ref(ptr)
     else
-      @printf("domain: %d\n".cstring(), ge.apply()?.domain)
-      @printf("code: %d\n".cstring(), ge.apply()?.code)
-      @printf("message: %s\n".cstring(), ge.apply()?.message)
+      @printf("domain: %d\n".cstring(), gerror.ptr.apply()?.domain)
+      @printf("code: %d\n".cstring(), gerror.ptr.apply()?.code)
+      @printf("message: %s\n".cstring(), gerror.ptr.apply()?.message)
 //      ge.apply()?.dispose() FIXME
       error
     end
 
   fun ref enumerate_children(path: String val, flags: I32): Array[String val] val ? =>
     // Ensure that our GErrorStruct is null before we start
-    ge.none()
-    let ppu8: Pointer[Pointer[U8]] = @g_resource_enumerate_children(ptr, path.cstring(), 0, addressof ge)
-    if (ge.is_none()) then
+    var gerror: GError = GError
+    let ppu8: Pointer[Pointer[U8]] = @g_resource_enumerate_children(ptr, path.cstring(), 0, addressof gerror.ptr)
+    if (gerror.ptr.is_none()) then
       let r: Array[String val] val = PonyTypes.ppu8_to_array_string(ppu8)
       @g_strfreev(ppu8)
       return r
