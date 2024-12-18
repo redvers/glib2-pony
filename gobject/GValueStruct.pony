@@ -1,15 +1,15 @@
 /*
  * name: Value
  * c:type: GValue
- * glib:is-gtype-struct-for: 
- * opaque: 
- * disguised: 
+ * glib:is-gtype-struct-for:
+ * opaque:
+ * disguised:
  * glib:type-name: GValue
  * glib:get-type: g_value_get_type
  * c:symbol-prefix: value
- * c:copy-function: 
- * c:free-function: 
- * deprecated: 
+ * c:copy-function:
+ * c:free-function:
+ * deprecated:
  */
 struct GValueStruct
 """
