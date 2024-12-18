@@ -1,3 +1,4 @@
+use "glib"
 /*
   Source: /usr/include/glib-2.0/gobject/gobject.h:252
   Original Name: _GObject

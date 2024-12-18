@@ -1,12 +1,18 @@
 /*
-  Source: /usr/include/glib-2.0/gobject/gtype.h:451
-  Original Name: _GTypeClass
-  Struct Size (bits):  64
-  Struct Align (bits): 64
-
-  Fields (Offset in bits):
-     000000: [FundamentalType(long unsigned int) size=64]: g_type
-*/
+ * name: TypeClass
+ * c:type: GTypeClass
+ * glib:is-gtype-struct-for: 
+ * opaque: 
+ * disguised: 
+ * glib:type-name: 
+ * glib:get-type: 
+ * c:symbol-prefix: 
+ * c:copy-function: 
+ * c:free-function: 
+ * deprecated: 
+ */
 struct GTypeClassStruct
-    var g_type: U64 = U64(0)
+"""
+An opaque structure used as the base of all classes.
+"""
 

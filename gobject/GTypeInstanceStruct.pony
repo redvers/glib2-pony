@@ -1,12 +1,18 @@
 /*
-  Source: /usr/include/glib-2.0/gobject/gtype.h:461
-  Original Name: _GTypeInstance
-  Struct Size (bits):  64
-  Struct Align (bits): 64
-
-  Fields (Offset in bits):
-     000000: [PointerType size=64]->[Struct size=64,fid: f135]: g_class
-*/
+ * name: TypeInstance
+ * c:type: GTypeInstance
+ * glib:is-gtype-struct-for: 
+ * opaque: 
+ * disguised: 
+ * glib:type-name: 
+ * glib:get-type: 
+ * c:symbol-prefix: 
+ * c:copy-function: 
+ * c:free-function: 
+ * deprecated: 
+ */
 struct GTypeInstanceStruct
-    var g_class: NullablePointer[GTypeClassStruct] = NullablePointer[GTypeClassStruct].none()
+"""
+An opaque structure used as the base of all type instances.
+"""
 

@@ -20,19 +20,19 @@ interface GObjectInterface
   fun ref gref() =>
     GObject.gref(get_ptr())
 
-  fun ref list_properties() => None
-    let ptr: GObjectStruct = get_ptr()
-
-    let gtype: U64 =
-    try
-      let gtcs: NullablePointer[GTypeClassStruct] = get_ptr().g_type_instance.g_class
-      let gtc: GTypeClassStruct = gtcs.apply()?
-      gtc.g_type
-    else
-      0
-    end
-    let goc: NullablePointer[GObjectClassStruct] = GObject.g_type_class_ref(gtype)
-    GObject.g_object_class_list_properties(goc)
+//  fun ref list_properties() => None
+//    let ptr: GObjectStruct = get_ptr()
+//
+//    let gtype: U64 =
+//    try
+//      let gtcs: NullablePointer[GTypeClassStruct] = get_ptr().g_type_instance.g_class
+//      let gtc: GTypeClassStruct = gtcs.apply()?
+//      gtc.g_type
+//    else
+//      0
+//    end
+//    let goc: NullablePointer[GObjectClassStruct] = GObject.g_type_class_ref(gtype)
+ //   GObject.g_object_class_list_properties(goc)
 
   fun name_from_instance(instance: NullablePointer[GObjectStruct]): String val =>
     GObject.name_from_instance(instance)

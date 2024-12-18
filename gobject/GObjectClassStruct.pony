@@ -1,3 +1,4 @@
+use "../glib"
 /*
   Source: /usr/include/glib-2.0/gobject/gobject.h:322
   Original Name: _GObjectClass

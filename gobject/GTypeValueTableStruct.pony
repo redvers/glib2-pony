@@ -1,25 +1,27 @@
 /*
-  Source: /usr/include/glib-2.0/gobject/gtype.h:1439
-  Original Name: _GTypeValueTable
-  Struct Size (bits):  512
-  Struct Align (bits): 64
-
-  Fields (Offset in bits):
-     000000: [PointerType size=64]->[FunctionType] -- WRITE MANUALLY: value_init
-     000064: [PointerType size=64]->[FunctionType] -- WRITE MANUALLY: value_free
-     000128: [PointerType size=64]->[FunctionType] -- WRITE MANUALLY: value_copy
-     000192: [PointerType size=64]->[FunctionType] -- WRITE MANUALLY: value_peek_pointer
-     000256: [PointerType size=64]->[FundamentalType(char) size=8]: collect_format
-     000320: [PointerType size=64]->[FunctionType] -- WRITE MANUALLY: collect_value
-     000384: [PointerType size=64]->[FundamentalType(char) size=8]: lcopy_format
-     000448: [PointerType size=64]->[FunctionType] -- WRITE MANUALLY: lcopy_value
-*/
+ * name: TypeValueTable
+ * c:type: GTypeValueTable
+ * glib:is-gtype-struct-for: 
+ * opaque: 
+ * disguised: 
+ * glib:type-name: 
+ * glib:get-type: 
+ * c:symbol-prefix: 
+ * c:copy-function: 
+ * c:free-function: 
+ * deprecated: 
+ */
 struct GTypeValueTableStruct
-    var value_init: Pointer[None] = Pointer[None]
-    var value_free: Pointer[None] = Pointer[None]
-    var value_copy: Pointer[None] = Pointer[None]
-    var value_peek_pointer: Pointer[None] = Pointer[None]
-    var collect_format: Pointer[U8] = Pointer[U8]
-    var _collect_value: Pointer[None] = Pointer[None]
-    var lcopy_format: Pointer[U8] = Pointer[U8]
-    var _lcopy_value: Pointer[None] = Pointer[None]
+"""
+The #GTypeValueTable provides the functions required by the #GValue
+implementation, to serve as a container for values of a type.
+"""
+  var value_init: Pointer[None] = Pointer[None]
+  var value_free: Pointer[None] = Pointer[None]
+  var value_copy: Pointer[None] = Pointer[None]
+  var value_peek_pointer: Pointer[None] = Pointer[None]
+  var collect_format: Pointer[U8] ref = recover iso Pointer[U8] end
+  var collect_value: Pointer[None] = Pointer[None]
+  var lcopy_format: Pointer[U8] ref = recover iso Pointer[U8] end
+  var lcopy_value: Pointer[None] = Pointer[None]
+
