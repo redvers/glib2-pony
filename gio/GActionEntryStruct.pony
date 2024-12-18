@@ -16,7 +16,7 @@ use "gobject"
      000320: [ArrayType size=(0-2)]->[FundamentalType(long unsigned int) size=64]
 */
 
-struct GActionEntry[A: Any]
+struct GActionEntryStruct[A: Any]
   var _name: Pointer[U8] tag = Pointer[U8]
   var _activate: @{(GObjectStruct, Pointer[GVariantStruct], A): None} = @{(action: GObjectStruct, parameter: Pointer[GVariantStruct], data: A): None => None}
   var _parameter_type: Pointer[U8] tag = Pointer[U8]
