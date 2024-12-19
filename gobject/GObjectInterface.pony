@@ -20,6 +20,17 @@ interface GObjectInterface
   fun ref gref() =>
     GObject.gref(get_ptr())
 
+  fun ref string(): String val =>
+    GType.name_from_instance(this)
+
+  fun ref set_property(pname: String val, gvalue: GValue) => None
+    GObject.set_property(get_ptr(), pname.cstring(), gvalue.ptr)
+
+  fun ref get_property(pname: String val, gvalue: GValue) => None
+    GObject.set_property(get_ptr(), pname.cstring(), gvalue.ptr)
+
+//  fun ref get_private[A: Any]
+
 //  fun ref list_properties() => None
 //    let ptr: GObjectStruct = get_ptr()
 //
@@ -34,13 +45,7 @@ interface GObjectInterface
 //    let goc: NullablePointer[GObjectClassStruct] = GObject.g_type_class_ref(gtype)
  //   GObject.g_object_class_list_properties(goc)
 
-  fun name_from_instance(instance: NullablePointer[GObjectStruct]): String val =>
-    GObject.name_from_instance(instance)
-
-
 
 //    @g_object_class_list_properties(oclass: NullablePointer[GObjectClassStruct] tag, nproperties: Pointer[U32] tag)
 
-//  fun gref(gobj: GObjectStruct tag): Pointer[GObject] tag =>
-//    @g_object_ref(gobj)
 

@@ -1,7 +1,8 @@
 use @g_value_init[GValueStruct](value: NullablePointer[GValueStruct] tag, gtype: U64)
 use @g_value_set_pointer[None](value: NullablePointer[GValueStruct] tag, ...)
-use @g_value_set_string[None](value: NullablePointer[GValueStruct] tag, ...)
 use @g_value_get_pointer[Pointer[None]](value: NullablePointer[GValueStruct] tag)
+use @g_value_set_string[None](value: NullablePointer[GValueStruct] tag, ...)
+use @g_value_get_string[Pointer[U8]](value: NullablePointer[GValueStruct] tag)
 
 /*
   Source: /usr/include/glib-2.0/gobject/gvalue.h:113
@@ -16,15 +17,24 @@ use @g_value_get_pointer[Pointer[None]](value: NullablePointer[GValueStruct] tag
 class GValue
   var ptr: GValueStruct
 
-  new create() =>
-   ptr = GValueStruct
-
-  fun ref init(gtype: U64) =>
+  new init(gtype: U64) =>
+    ptr = GValueStruct
     ptr = @g_value_init(NullablePointer[GValueStruct](ptr), gtype)
 
+  new init_from_name(gtype: String val)? =>
+    ptr = GValueStruct
+    var g_type: U64 = GType.from_name(gtype)
+    if (g_type == 0) then error end
+    ptr = @g_value_init(NullablePointer[GValueStruct](ptr), g_type)
+
   fun ref set_pointer[C: Any](data: C) =>
-    @g_value_set_string(NullablePointer[GValueStruct](ptr), data)
+    @g_value_set_pointer(NullablePointer[GValueStruct](ptr), data)
 
   fun ref get_pointer[B: Any](): B =>
     @g_value_get_pointer[B](NullablePointer[GValueStruct](ptr))
 
+  fun ref set_string(data: String val) =>
+    @g_value_set_string(NullablePointer[GValueStruct](ptr), data.cstring())
+
+  fun ref get_string(): String val =>
+    String.from_cstring(@g_value_get_string(NullablePointer[GValueStruct](ptr))).clone()
