@@ -1,0 +1,17 @@
+
+
+/*
+  Source: /usr/include/glib-2.0/gobject/gparamspecs.h:783
+  Original Name: _GParamSpecEnum
+  Struct Size (bits):  704
+  Struct Align (bits): 64
+
+  Fields (Offset in bits):
+     000000: [Struct size=576,fid: f137]: parent_instance
+     000576: [PointerType size=64]->[Struct size=256,fid: f146]: enum_class
+     000640: [FundamentalType(int) size=32]: default_value
+*/
+struct GParamSpecEnumStruct
+    embed parent_instance: GParamSpecStruct = GParamSpecStruct
+    var enum_class: NullablePointer[GEnumClassStruct] = NullablePointer[GEnumClassStruct].none()
+    var default_value: I32 = I32(0)
