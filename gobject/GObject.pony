@@ -10,6 +10,7 @@ use @g_type_class_ref[NullablePointer[GObjectClassStruct]](gtype: U64)
 use @printf[U32](fmt: Pointer[U8] tag, ...)
 use @g_object_set_property[None](gobject: GObjectStruct, name: Pointer[U8] tag, gvalue: GValueStruct tag)
 use @g_type_instance_get_private[Pointer[GValue]](gi: GTypeInstanceStruct, gtype: U64)
+use @g_object_new[GObjectStruct](gtype: U64, first: Pointer[U8] tag, ...)
 
 
 use "debug"
@@ -22,6 +23,8 @@ primitive GObject
   fun instance_get_private(g: GTypeInstanceStruct, gtype: U64): Pointer[GValue] =>
     @g_type_instance_get_private(g, gtype)
 
+  fun init[A: Any](gtype: String val): A =>
+    @g_object_new[A](GType.from_name(gtype), Pointer[U8])
 
 
   fun set_property(gobj: GObjectStruct, pname: Pointer[U8] tag, gvalue: GValueStruct) =>

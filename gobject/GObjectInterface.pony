@@ -29,6 +29,15 @@ interface GObjectInterface
   fun ref get_property(pname: String val, gvalue: GValue) => None
     GObject.set_property(get_ptr(), pname.cstring(), gvalue.ptr)
 
+  fun ref get_type(): U64 =>
+    // (((((GTypeClass*) (((GTypeInstance*) (Object))->g_class))->g_type)))
+    try
+      var gtis: NullablePointer[GTypeClassStruct] = get_ptr().g_type_instance.g_class
+      gtis.apply()?.g_type
+    else
+      0
+    end
+
 //  fun ref get_private[A: Any]
 
 //  fun ref list_properties() => None
