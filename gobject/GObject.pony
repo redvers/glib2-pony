@@ -30,12 +30,24 @@ primitive GObject
   fun set_property(gobj: GObjectStruct, pname: Pointer[U8] tag, gvalue: GValueStruct) =>
     @g_object_set_property(gobj, pname, gvalue)
 
-
-
-
-
-  fun signal_connect_data[A: Any](ptr: GObjectStruct tag, signal: Pointer[U8] tag, chandler: GCallback[A], data: A) =>
+  fun signal_connect_data[A: Any](ptr: GObjectStruct tag, signal: Pointer[U8] tag, chandler: Pointer[None], data: A) =>
     @g_signal_connect_data(ptr, signal, chandler, data, Pointer[None], I32(0))
+
+//  fun signal_connect_marshall[A: Any, B: GObjectMarshall](ptr: GObjectStruct tag, signal: Pointer[U8] tag, chandler: Pointer[None], data: A) => None
+//    Debug.out("GObject.signal_connect_marshall()")
+//    @g_signal_connect_data(ptr, signal, chandler, data, Pointer[None], I32(0))
+//
+//  fun @marshall[A: Any, B: GObjectMarshall](gobj: GObjectStruct, data: A)
+
+//    let m: @{(GObjectStruct, GtkPony) =>
+//    @g_signal_connect_data(ptr, signal, chandler, data, Pointer[None], I32(0))
+
+
+
+
+
+
+
 
   fun signal_connect[A: Any](ptr: GObjectStruct tag, signal: Pointer[U8] tag, cb: {(): None} val, data: A) => None
     @g_signal_connect_data(ptr, signal,
@@ -84,6 +96,4 @@ primitive GObject
 //    var cptr: Pointer[U8] = @g_type_name_from_instance[Pointer[U8]](instance)
 //    String.from_cstring(cptr).clone()
 
-type GCallback[A: Any] is @{(GObjectStruct tag): None}
-type GCallback2 is @{(GObjectStruct tag): None}
 

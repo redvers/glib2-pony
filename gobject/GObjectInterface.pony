@@ -5,11 +5,13 @@ use "glib"
 
 interface GObjectInterface
   fun ref get_ptr(): GObjectStruct
-  fun ref signal_connect_data[A: Any](signal: String val, chandler: GCallback[A], data: A) => None
+
+  fun ref signal_connect_data[A: Any](signal: String val, chandler: Pointer[None], data: A) => None
     GObject.signal_connect_data[A](get_ptr(), signal.cstring(), chandler, consume data)
 
-  fun ref signal_connect[A: Any #send](signal: String val, cb: {(): None} val, data: A) => None
-    GObject.signal_connect[A](get_ptr(), signal.cstring(), cb, consume data)
+
+//  fun ref signal_connect[A: Any](signal: String val, cb: GtkButtonActivated[A]) => None
+//    GObject.signal_connect[A](get_ptr(), signal.cstring(), cb, consume data)
 
   fun ref ref_sink() =>
     GObject.ref_sink(get_ptr())
@@ -56,5 +58,3 @@ interface GObjectInterface
 
 
 //    @g_object_class_list_properties(oclass: NullablePointer[GObjectClassStruct] tag, nproperties: Pointer[U32] tag)
-
-
