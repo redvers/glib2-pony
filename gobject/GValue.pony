@@ -38,3 +38,51 @@ class GValue
 
   fun ref get_string(): String val =>
     String.from_cstring(@g_value_get_string(NullablePointer[GValueStruct](ptr))).clone()
+
+  new init_u8() =>
+    ptr = GValueStruct
+    @g_value_init(NullablePointer[GValueStruct](ptr),
+      GType.from_name("gchar")
+    )
+  new init_bool() =>
+    ptr = GValueStruct
+    @g_value_init(NullablePointer[GValueStruct](ptr),
+      GType.from_name("gint")
+    )
+  new init_int() =>
+    ptr = GValueStruct
+    @g_value_init(NullablePointer[GValueStruct](ptr),
+      GType.from_name("gint")
+    )
+  new init_float() =>
+    ptr = GValueStruct
+    @g_value_init(NullablePointer[GValueStruct](ptr),
+      GType.from_name("gfloat")
+    )
+
+  new init_double() =>
+    ptr = GValueStruct
+    @g_value_init(NullablePointer[GValueStruct](ptr),
+      GType.from_name("gdouble")
+    )
+  new init_string() =>
+    ptr = GValueStruct
+    @g_value_init(NullablePointer[GValueStruct](ptr),
+      GType.from_name("gchararray")
+    )
+  new init_param() =>
+    ptr = GValueStruct
+    @g_value_init(NullablePointer[GValueStruct](ptr),
+      GType.from_name("GParam")
+    )
+  new init_object() =>
+    ptr = GValueStruct
+    @g_value_init(NullablePointer[GValueStruct](ptr),
+      GType.from_name("GObject")
+    )
+  new init_variant() =>
+    ptr = GValueStruct
+    @g_value_init(NullablePointer[GValueStruct](ptr),
+      GType.from_name("GVariant")
+    )
+

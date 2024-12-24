@@ -40,6 +40,9 @@ interface GObjectInterface
       0
     end
 
+  fun ref eq(gobj: GObjectInterface): Bool =>
+    get_ptr() is gobj.get_ptr()
+
 //  fun ref get_private[A: Any]
 
 //  fun ref list_properties() => None
