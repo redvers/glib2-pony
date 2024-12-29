@@ -821,3 +821,17 @@ use @g_object_weak_ref[None](gobject: GObjectStruct tag, notify: Pointer[None] t
 */
 use @g_object_weak_unref[None](gobject: GObjectStruct tag, notify: Pointer[None] tag, data: Pointer[None] tag)
 
+/*
+  Source: /usr/include/glib-2.0/gobject/gobject.h:489
+  Original Name: g_object_set_property/usr/include/glib-2.0/gobject/gobject.h:489
+
+  Return Value: [FundamentalType(void) size=0]
+
+  Arguments:
+    [PointerType size=64]->[Struct size=192,fid: f143]
+    [PointerType size=64]->[FundamentalType(char) size=8]
+    [PointerType size=64]->[Struct size=192,fid: f136]
+*/
+use @g_object_set_property[None](gobject: GObjectStruct tag, propertyname: Pointer[U8] tag, value: GValueStruct tag)
+
+

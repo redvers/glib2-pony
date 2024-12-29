@@ -1,7 +1,8 @@
 use @g_signal_connect_data[U64](instance: GObjectStruct tag, signal: Pointer[U8] tag, ...)
 use @g_type_class_ref[NullablePointer[GObjectClassStruct]](gtype: U64)
 use @printf[U32](fmt: Pointer[U8] tag, ...)
-use @g_object_set_property[None](gobject: GObjectStruct, name: Pointer[U8] tag, gvalue: GValueStruct tag)
+//use @g_object_set_property[None](gobject: GObjectStruct, name: Pointer[U8] tag, gvalue: GValueStruct tag)
+//use @g_object_get_property[None](gobject: GObjectStruct, name: Pointer[U8] tag, gvalue: GValueStruct tag)
 use @g_type_instance_get_private[Pointer[GValue]](gi: GTypeInstanceStruct, gtype: U64)
 
 
@@ -21,6 +22,9 @@ primitive GObject
 
   fun set_property(gobj: GObjectStruct, pname: Pointer[U8] tag, gvalue: GValueStruct) =>
     @g_object_set_property(gobj, pname, gvalue)
+
+  fun get_property(gobj: GObjectStruct, pname: Pointer[U8] tag, gvalue: GValueStruct) =>
+    @g_object_get_property(gobj, pname, gvalue)
 
   fun signal_connect_data[A: Any](ptr: GObjectStruct tag, signal: Pointer[U8] tag, chandler: Pointer[None], data: A) =>
     @g_signal_connect_data(ptr, signal, chandler, data, Pointer[None], I32(0))

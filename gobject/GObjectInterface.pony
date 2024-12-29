@@ -25,11 +25,15 @@ interface GObjectInterface
   fun ref string(): String val =>
     GType.name_from_instance(this)
 
-  fun ref set_property(pname: String val, gvalue: GValue) => None
+  fun ref set_property_string(pname: String val, str: String val) =>
+    let gvalue: GValue = GValue.init_string()
+    gvalue.set_string(str)
     GObject.set_property(get_ptr(), pname.cstring(), gvalue.ptr)
 
-  fun ref get_property(pname: String val, gvalue: GValue) => None
-    GObject.set_property(get_ptr(), pname.cstring(), gvalue.ptr)
+  fun ref get_property_string(pname: String val): String val =>
+    let gvalue: GValue = GValue.init_string()
+    GObject.get_property(get_ptr(), pname.cstring(), gvalue.ptr)
+    gvalue.get_string()
 
   fun ref get_type(): U64 =>
     // (((((GTypeClass*) (((GTypeInstance*) (Object))->g_class))->g_type)))
