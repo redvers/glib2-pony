@@ -1,3 +1,3 @@
 use "gobject"
 
-interface GApplicationInterface is GObjectInterface
+trait GApplicationInterface is GObjectInterface

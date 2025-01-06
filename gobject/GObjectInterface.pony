@@ -3,7 +3,7 @@ use "lib:gobject-2.0"
 use "gio"
 use "glib"
 
-interface GObjectInterface
+trait GObjectInterface
   fun ref get_ptr(): GObjectStruct
 
   fun ref signal_connect_data[A: Any](signal: String val, chandler: Pointer[None], data: A) => None

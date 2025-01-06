@@ -4,7 +4,7 @@ use "gobject"
 use @g_list_model_get_item_type[U64](list: GObjectStruct tag)
 use @g_list_model_get_object[GObjectStruct](list: GObjectStruct tag, posn: U32)
 
-interface GListModelInterface
+trait GListModelInterface
   fun ref get_ptr(): GObjectStruct
 
   fun ref get_item_type(): U64 =>
